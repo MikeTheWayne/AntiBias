@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS RESULTS (
+    result_id              BIGINT     AUTO_INCREMENT   PRIMARY KEY,
+
+);
