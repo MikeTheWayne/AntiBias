@@ -6,22 +6,30 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.sql.Date;
-
 @Entity
-@Table(name = "ANALYSES")
+@Table(name = "RESULTS")
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Analysis {
+public class Result {
 
 	@Id
 	@Getter
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long analysis_id;
+	private long result_id;
 
 	@Getter
-	@Column(name = "completion_timestamp")
-	private Date completion_timestamp;
+	@ManyToOne
+	@JoinColumn(name = "analysis_id")
+	private Analysis analysis;
+	@Getter
+	private int site_id;
+
+	@Getter
+	private String search_term;
+	@Getter
+	private byte sentiment_average;
+	@Getter
+	private byte sentiment_confidence;
 
 }

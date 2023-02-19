@@ -34,7 +34,7 @@ public class AnalysisControllerTest {
 	}
 
 	@Test
-	public void controllerCrudFlow() throws Exception {
+	public void controllerCrudFlow() {
 		final String url = DOMAIN + port + PATH;
 
 		// Create & store analysis
